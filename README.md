@@ -1,3 +1,3 @@
 # **geojson_bbox()**
 ####Creates bbox from given geojson object (Feature, FeatureCollection) <br/>
-geojson_bbox(geojson, extend=True)
+geojson_bbox(geojson)
