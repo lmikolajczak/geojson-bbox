@@ -12,7 +12,8 @@ class GeoJSON:
                            for f in geojson['features']]))
             self.features_count = len(geojson['features'])
         elif geojson['type'] == 'Feature':
-            self.coords = list(self.__flatten([geojson['geometry']['coordinates']]))
+            self.coords = list(self.__flatten([
+                        geojson['geometry']['coordinates']]))
             self.features_count = 1
         else:
             self.coords = list(self.__flatten([geojson['coordinates']]))
@@ -25,7 +26,7 @@ class GeoJSON:
                     yield subval
             else:
                 yield val
-                
+
     def bbox(self):
         return [min(self.coords[::2]),min(self.coords[1::2]),
                 max(self.coords[::2]),max(self.coords[1::2])]
