@@ -4,8 +4,7 @@
 # GeoJSON bbox
 
 class GeoJSON:
-    """
-    """
+    """GeoJSON class which allows to calculate bbox"""
     def __init__(self, geojson):
         if geojson['type'] == 'FeatureCollection':
             self.coords = list(self.__flatten([f['geometry']['coordinates']
