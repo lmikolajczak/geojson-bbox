@@ -11,7 +11,7 @@ print bbox
 ```
 
 ## Version 
-* Version 0.1
+* Version 0.0.1
 
 ## Contact
 * page: [mikolajczakluq.com](https://mikolajczakluq.com/contact)
