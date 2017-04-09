@@ -1,18 +1,27 @@
-GeoJSON-bbox
-======
-Simple Python module for calculating bounding box (bbox) from given GeoJSON object:
+## geojson-bbox
 
-```python
-geo = GeoJSON(geojson)
-bbox = geo.bbox()
+Simple Python module for calculating bounding box (bbox) from given GeoJSON object.
 
-print bbox
-[min_x,min_y,max_x,max_y]
+### Installation
+
+In cloned repo directory:
+
+```bash
+$ python setup.py install
 ```
 
-## Version 
-* Version 0.0.1
+### Usage
 
-## Contact
-* page: [mikolajczakluq.com](https://mikolajczakluq.com/contact)
-* e-mail: mikolajczak.luq@gmail.com
+```python
+>>> import gbbox
+>>> feature = gbbox.GeoJSON(geojson)
+>>> feature_bbox = feature.bbox()
+
+print feature_bbox
+[min_x, min_y, max_x, max_y]
+```
+
+### TODO
+
+* add new features
+* write some tests
