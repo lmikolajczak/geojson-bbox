@@ -1,4 +1,4 @@
-## geojson-bbox
+## 📐 geojson-bbox
 
 Simple Python module for calculating bounding box (bbox) from given GeoJSON object.
 
