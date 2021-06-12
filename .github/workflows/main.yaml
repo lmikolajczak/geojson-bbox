@@ -24,4 +24,4 @@ jobs:
           poetry install
       - name: Lint with flake8
         run: |
-          flake8 . --count --show-source --statistics
+          python -m flake8 . --count --show-source --statistics
