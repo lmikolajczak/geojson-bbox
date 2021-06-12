@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "gbbox"
+version = "0.1.0"
+description = "Simple Python module for calculating bounding box (bbox) from given GeoJSON Feature or FeatureCollection"
+authors = ["Łukasz Mikołajczak <mikolajczak.luq@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "3.9.5"
+
+[tool.poetry.dev-dependencies]
+black = "21.6b0"
+flake8 = "3.9.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
