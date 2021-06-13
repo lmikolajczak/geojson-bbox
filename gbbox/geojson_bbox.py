@@ -8,6 +8,9 @@ class GeoJSON:
                     [f["geometry"]["coordinates"] for f in geojson["features"]]
                 )
             )
+
+
+            
             self.features_count = len(geojson["features"])
         elif geojson["type"] == "Feature":
             self.coords = list(self._flatten([geojson["geometry"]["coordinates"]]))

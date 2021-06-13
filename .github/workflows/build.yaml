@@ -32,9 +32,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: Build docker images
+      - name: Build docker image
         run: docker build -t gbbox .
       - name: Lint with flake8
         run: |
-          docker run -v $PWD:/code gbbox flake8
-
+          docker run -v $PWD:/code gbbox flake8 . --count --show-source --statistics
