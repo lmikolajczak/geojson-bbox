@@ -24,3 +24,17 @@ jobs:
       - name: Lint with flake8
         run: |
           poetry run flake8 . --count --show-source --statistics
+  build_alternative:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Build docker images
+        run: docker build -t gbbox .
+      - name: Lint with flake8
+        run: |
+          docker run -it -v $PWD:/code gbbox flake8
+
