@@ -36,4 +36,4 @@ jobs:
         run: docker build -t gbbox .
       - name: Lint with flake8
         run: |
-          docker run -v $PWD:/code gbbox flake8 . --count --show-source --statistics
+          docker run -v $PWD:/code gbbox make lint

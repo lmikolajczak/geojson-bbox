@@ -9,7 +9,6 @@ license = "MIT"
 python = "3.9.5"
 
 [tool.poetry.dev-dependencies]
-black = "21.6b0"
 flake8 = "3.9.2"
 
 [build-system]
