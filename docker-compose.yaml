@@ -1,0 +1,6 @@
+services:
+  gbbox:
+    build: .
+    image: gbbox
+    volumes:
+      - .:/code
