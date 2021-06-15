@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Build docker image
         run: |
-          docker compose build
+          docker-compose build
       - name: Lint with flake8
         run: |
-          docker compose run gbbox make lint
+          docker-compose run gbbox make lint
       - name: Run tests
         run: |
-          docker compose run gbbox make test
+          docker-compose run gbbox make test
