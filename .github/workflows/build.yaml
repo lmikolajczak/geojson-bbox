@@ -9,31 +9,14 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install Poetry
-        uses: snok/install-poetry@v1.1.6
-        with:
-          virtualenvs-create: false
-      - name: Install dependencies
-        run: |
-          poetry install
-      - name: Lint with flake8
-        run: |
-          poetry run flake8 . --count --show-source --statistics
-  build_alternative:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.9]
-    steps:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Build docker image
-        run: docker build -t gbbox .
+        run: |
+          docker compose build
       - name: Lint with flake8
         run: |
-          docker run -v $PWD:/code gbbox make lint
+          docker compose run gbbox make lint
+      - name: Run tests
+        run: |
+          docker compose run gbbox make test

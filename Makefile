@@ -18,4 +18,4 @@ lint:
 	
 # This function uses pytest to test our code
 test:
-	@echo "Test are not implemented yet..."
+	@echo "Tests are not implemented yet..."
