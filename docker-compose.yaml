@@ -2,5 +2,6 @@ services:
   gbbox:
     build: .
     image: gbbox
+    container_name: gbbox
     volumes:
       - .:/code

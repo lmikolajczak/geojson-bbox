@@ -1,3 +1,9 @@
-from .geojson_bbox import GeoJSON
+from .objects import (
+    Point,
+    LineString,
+    MultiLineString,
+    Polygon,
+    GeometryCollection,
+)
 
-__all__ = [GeoJSON]
+__all__ = [Point, LineString, MultiLineString, Polygon, GeometryCollection]
