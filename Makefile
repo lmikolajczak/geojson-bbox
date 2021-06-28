@@ -6,7 +6,7 @@ help:
 	@echo "To test the project type make test"
 	@echo "-----------------------------------------"
 
-# This generates the desired project file structure
+# Install all dependencies and project in an editable mode
 install:
 	@echo "Installing current project in editable mode..."
 	poetry install
@@ -18,4 +18,5 @@ lint:
 	
 # This function uses pytest to test our code
 test:
-	@echo "Tests are not implemented yet..."
+	@echo "Running tests..."
+	pytest --cov=gbbox -v
