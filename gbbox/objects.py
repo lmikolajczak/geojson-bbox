@@ -1,4 +1,4 @@
-from typing import Iterable, Union, List
+from typing import Iterable, Union, List, Literal
 from functools import cached_property
 
 from pydantic import BaseModel, conlist
@@ -29,7 +29,7 @@ class GeoJSON(BaseModel):
 
     @cached_property
     def max_lat(self) -> float:
-        return max(self.flattened_coords[1:2])
+        return max(self.flattened_coords[1::2])
 
     @cached_property
     def flattened_coords(self) -> List[float]:
@@ -48,30 +48,37 @@ class GeoJSON(BaseModel):
 
 
 class Point(GeoJSON):
+    type: Literal[GeometryType.POINT.value]
     coordinates: Position
 
 
 class MultiPoint(GeoJSON):
+    type: Literal[GeometryType.MULTIPOINT.value]
     coordinates: conlist(Position, min_items=2)
 
 
 class LineString(GeoJSON):
+    type: Literal[GeometryType.LINESTRING.value]
     coordinates: conlist(Position, min_items=2)
 
 
 class MultiLineString(GeoJSON):
+    type: Literal[GeometryType.MULTILINESTRING.value]
     coordinates: conlist(conlist(Position, min_items=2), min_items=2)
 
 
 class Polygon(GeoJSON):
+    type: Literal[GeometryType.POLYGON.value]
     coordinates: conlist(conlist(Position, min_items=4))
 
 
 class MultiPolygon(GeoJSON):
+    type: Literal[GeometryType.MULTIPOLYGON.value]
     coordinates: conlist(conlist(conlist(Position, min_items=4)), min_items=2)
 
 
 class GeometryCollection(GeoJSON):
+    type: Literal[GeometryType.GEOMETRYCOLLECTION.value]
     geometries: List[
         Union[Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon]
     ]
