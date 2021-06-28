@@ -6,7 +6,6 @@ from pydantic import ValidationError
 from gbbox.objects import (
     Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon
 )
-from gbbox.constants import GeometryType
 
 
 class TestGeojsonObject:
