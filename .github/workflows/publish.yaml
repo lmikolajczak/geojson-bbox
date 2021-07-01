@@ -24,7 +24,9 @@ jobs:
       - name: Publish package to PYPI
         run: |
           echo "$PYPI_USERNAME"
-          poetry publish --username "$PYPI_USERNAME" --password "$PYPI_API_TOKEN" --dry-run
+          echo "API key should be masked..."
+          echo "$PYPI_API_KEY"
+          poetry publish --username "$PYPI_USERNAME" --password "$PYPI_API_KEY" --dry-run
         env:
           PYPI_USERNAME: __token__
-          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+          PYPI_API_KEY: ${{ secrets.PYPI_API_KEY }}
