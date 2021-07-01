@@ -20,7 +20,7 @@ jobs:
           virtualenvs-create: false
       - name: Publish to PYPI
         run: |
-          @echo "Token should be masked..."
-          @echo "$PYPI_API_TOKEN"
+          echo "Token should be masked..."
+          echo "$PYPI_API_TOKEN"
         env:
           PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
