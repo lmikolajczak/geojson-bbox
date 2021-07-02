@@ -4,6 +4,22 @@ version = "0.1.0"
 description = "Simple Python module for calculating bounding box (bbox) from given GeoJSON object"
 authors = ["Łukasz Mikołajczak <mikolajczak.luq@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/luqqk/geojson-bbox"
+repository = "https://github.com/luqqk/geojson-bbox"
+keywords = ["python", "gis", "geojson", "bbox"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+include = [
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
 python = "3.9.5"

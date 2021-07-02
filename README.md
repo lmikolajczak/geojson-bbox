@@ -54,3 +54,9 @@ any code changes will be immediately reflected. Keep in mind that if you have py
 running then you have to restart it.
 
 You can also use `make lint` and `make test` as shortcuts to run linters and tests
+
+### Changelog
+
+v0.1.0 (2021-7-3):
+
+* Initial release

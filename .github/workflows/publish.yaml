@@ -1,5 +1,8 @@
 name: Publish
-on: [push]
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   publish:
@@ -23,10 +26,7 @@ jobs:
           poetry build
       - name: Publish package to PYPI
         run: |
-          echo "$PYPI_USERNAME"
-          echo "API key should be masked..."
-          echo "$PYPI_API_KEY"
-          poetry publish --username "$PYPI_USERNAME" --password "$PYPI_API_KEY" --dry-run
+          poetry publish --username "$PYPI_USERNAME" --password "$PYPI_API_KEY"
         env:
           PYPI_USERNAME: __token__
           PYPI_API_KEY: ${{ secrets.PYPI_API_KEY }}
