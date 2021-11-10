@@ -31,7 +31,7 @@ $ pip install gbbox
 >>>     ]
 >>> }
 >>>
->>> linestring = Point(**linestring_geojson)
+>>> linestring = LineString(**linestring_geojson)
 >>> linestring_bbox = linestring.bbox()
 
 >>> print(linestring_bbox)
@@ -53,10 +53,10 @@ Project will be automatically installed within docker container in an editable m
 any code changes will be immediately reflected. Keep in mind that if you have python shell
 running then you have to restart it.
 
-You can also use `make lint` and `make test` as shortcuts to run linters and tests
+You can also use `make lint` and `make test` as shortcuts to run linters and tests.
 
 ### Changelog
 
-v0.1.0 (2021-7-3):
+v0.1.0 (2021-07-03):
 
 * Initial release
