@@ -22,7 +22,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "3.9.5"
+python = "^3.9.5"
 pydantic = "1.9.1"
 
 [tool.poetry.dev-dependencies]
