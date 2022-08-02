@@ -1,15 +1,17 @@
-FROM python:3.9.5
+FROM python:3.10
 
 WORKDIR /code
 
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-ENV PATH = "${PATH}:/root/.poetry/bin"
-# We do not need to create virtualenv inside
-# of a docker container
+# Install Poetry
+ENV POETRY_VERSION=1.1.14
+RUN curl -sSL https://install.python-poetry.org | python - --version $POETRY_VERSION
+# Add poetry install location to PATH
+ENV PATH=/root/.local/bin:$PATH
+
+# We do not need to create virtualenv inside of a docker container
 RUN poetry config virtualenvs.create false
 
-# poetry.lock with wildcard because it is
-# not always present (copy only if available)
+# poetry.lock with wildcard because it is not always present (copy only if available)
 COPY pyproject.toml poetry.lock* /code/
 RUN poetry install
 

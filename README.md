@@ -55,8 +55,6 @@ running then you have to restart it.
 
 You can also use `make lint` and `make test` as shortcuts to run linters and tests.
 
-### Changelog
+### Contributing
 
-v0.1.0 (2021-07-03):
-
-* Initial release
+I am open to, and grateful for, any contributions made by the community.
